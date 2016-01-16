@@ -13,8 +13,8 @@ Sound editing done with [Audacity](http://www.audacityteam.org) and map modeling
 
 ## Build&Run
 
-  npm install
-  npm run dev
+> npm install
+> npm run dev
 
 
 ## Credits
