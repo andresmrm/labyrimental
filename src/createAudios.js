@@ -61,7 +61,7 @@ export function createPositionedAudios() {
             state.darkPresence.sound.volume.gain.value = 1
         }
     } else {
-        if (state.darkPresence) {
+        if (state.darkPresence.sound) {
             state.darkPresence.sound.volume.gain.value = 0
         }
     }
