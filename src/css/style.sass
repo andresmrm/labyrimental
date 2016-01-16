@@ -1,0 +1,87 @@
+@font-face
+  font-family: 'KlaudiaRegular'
+  src: url('assets/fonts/Klaudia.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+body
+  margin: 0px
+  background-color: black
+  font-family: 'KlaudiaRegular'
+  font-weight: normal
+  font-style: normal
+  font-size: 18pt
+  color: white
+  text-shadow: 1px 1px 2px rgb(116, 116, 116)
+
+h1
+  text-shadow: 0px 0px 10px #FFF
+
+#loading-screen
+  animation: 2s appear
+  text-align: center
+  padding: 30% 0px
+  h2
+    animation-name: shine
+    animation-duration: 2s
+    animation-direction: alternate
+    animation-iteration-count: infinite
+    animation-timing-function: ease-out
+
+#interface-outer
+  position: absolute
+  text-align: center
+
+b
+  color: #7CB5FF
+
+.page
+  animation: 2s appear
+
+ul
+  list-style-type: none
+  padding: 0px
+
+a
+  background-color: #4F7BAE
+  border-radius: 4px
+  display: inline-block
+  cursor: pointer
+  color: #ffffff
+  /* font-size: 20px
+  /* text-shadow: 0px 1px 1px #3d768a
+  padding: 9px 32px
+  text-decoration: none
+  margin: 20px
+  text-shadow: 2px 2px 2px #2A5687
+  box-shadow: 0px 0px 3px #4f7bae
+  transition: box-shadow 0.5s
+  &:hover
+    box-shadow: 0px 0px 5px 5px rgba(209, 235, 255, 0.5)
+  /*   background-color: #408c99
+  &:active
+    position: relative
+    color: #aaaaaa
+    top: 1px
+
+
+@keyframes appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes shine
+  0%
+    text-shadow: 0px 0px 0px #FFF
+  100%
+    text-shadow: 0px 0px 10px #FFF
+
+@keyframes slidein
+  from
+    margin-left: 100%
+    width: 300%
+
+  to
+    margin-left: 0%
+    width: 100%
