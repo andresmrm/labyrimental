@@ -11,4 +11,4 @@ import 'core-js/fn/array/iterator'
 
 import 'regeneratorRuntime'
 
-import './css/style.sass'
+import '../style.sass'
