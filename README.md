@@ -27,12 +27,12 @@ And this line to build and run a small server that should automatically update t
 npm run dev
 ```
 
-Than open a browser and check the game in this a local address: http://localhost:5001
+Than open a browser and check the game in this local address: `http://localhost:5001`
 
 
 ## Credits
 
-These are works from other people that I used in this game.
+These are works from other people that were used in this game.
 
 ### Sounds
 
