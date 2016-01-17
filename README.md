@@ -13,11 +13,26 @@ Sound editing done with [Audacity](http://www.audacityteam.org) and map modeling
 
 ## Build&Run
 
-> npm install
-> npm run dev
+If you want to modify the source code and build it, you will need to install [Node.js](https://nodejs.org) which should come with a copy of [npm](https://docs.npmjs.com/getting-started/installing-node).
+
+Copy the files of this game to a folder and, inside of that folder, run this line to install dependencies:
+
+```
+npm install
+```
+
+And this line to build and run a small server that should automatically update the browser on code changes:
+
+```
+npm run dev
+```
+
+Than open a browser and check the game in this a local address: http://localhost:5001
 
 
 ## Credits
+
+These are works from other people that I used in this game.
 
 ### Sounds
 
@@ -52,3 +67,8 @@ Most of the sounds were modified by me, but these are the original ones:
 ### Fonts
 
 - klaudia: https://fontlibrary.org/en/font/klaudia-and-berenika
+
+
+## Contact
+
+If you want to contact me, my e-mail starts with **andres**, then comes a **@**, and in the end **inventati.org**.
