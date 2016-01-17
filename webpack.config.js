@@ -21,6 +21,7 @@ module.exports = {
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.scss$/, include: /src/, loader: 'style!css!sass' },
             { test: /\.sass$/, include: /src/, loader: 'style!css!sass?indentedSyntax' },
+            { test: /\.ttf$/, loader: "file-loader" },
             // { test: /\.html$/, include: /src/, loader: 'riotjs' },
             { test: /\.js$/,
               exclude: /\.es5\.js$/,
@@ -40,13 +41,9 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            // riot: 'riot',
             // PIXI: 'imports?this=>global!exports?global.PIXI!pixi',
             // Phaser: 'phaser',
-            // leaflet: 'leaflet',
             regeneratorRuntime: 'regeneratorRuntime'
-            // TODO: carregar como os outros polyfills
-            // fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor'],
@@ -62,6 +59,5 @@ module.exports = {
     devServer: {
         port: 5001
     },
-    // devtool: "source-map"
     devtool: "source-map"
 }

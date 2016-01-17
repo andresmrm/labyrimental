@@ -29,6 +29,8 @@ npm run dev
 
 Than open a browser and check the game in this local address: `http://localhost:5001`
 
+(To consolidate source code changes in the dist folder, use `npm run dist`, and to serve these files (without "hotswap") use `npm run viewdist`.)
+
 
 ## Credits
 
