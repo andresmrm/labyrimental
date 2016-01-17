@@ -9,6 +9,6 @@ import 'core-js/fn/array/iterator'
 // import 'es6.array.iterator'
 // import 'core-js/fn/symbol/iterator'
 
-import 'regeneratorRuntime'
+// import 'regeneratorRuntime'
 
 import '../style.sass'

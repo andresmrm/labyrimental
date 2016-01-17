@@ -40,11 +40,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            // PIXI: 'imports?this=>global!exports?global.PIXI!pixi',
-            // Phaser: 'phaser',
-            regeneratorRuntime: 'regeneratorRuntime'
-        }),
+        // new webpack.ProvidePlugin({
+        //     // PIXI: 'imports?this=>global!exports?global.PIXI!pixi',
+        //     // Phaser: 'phaser',
+        //     regeneratorRuntime: 'regeneratorRuntime'
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor'],
             // names: ['prephaser', 'vendor'],
