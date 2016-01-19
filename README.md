@@ -1,4 +1,4 @@
-# Labyrimental (Alfa...)
+# Labyrimental (Beta)
 
 A free software game made with [Luxrender](http://luxrender.net) (through [Ambulatilis Lux](https://github.com/andresmrm/ambulatilis-lux)) and [Phaser](http://phaser.io).
 
