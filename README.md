@@ -31,6 +31,38 @@ Than open a browser and check the game in this local address: `http://localhost:
 
 (To consolidate source code changes in the dist folder, use `npm run dist`, and to serve these files (without "hotswap") use `npm run viewdist`.)
 
+## Blend file
+
+The .blend file was too big for GitHub, but you can download it [here](https://mega.nz/#!F9cjCZSC!KZB_5pZnb0QAVpoWKXPiWtWhiWG1uceyc599kUmT4Zw).
+
+It should come with textures and a `zone.py` file used for the rendering.
+
+## Rendering
+
+If you want to modify the map and rerender it, you should do something like this.
+
+1. Clone or download this repository to a folder, let's say `/path/to/laby`.
+2. Download the blend file from the link above, extract it in a folder, let's say, `/path/to/blend`.
+3. Use Blender to modify the .blend, save it.
+4. Clone or download [Ambulatilis Lux](https://github.com/andresmrm/ambulatilis-lux) to a folder, let's say, `/path/to/amblux`.
+5. Create a folder to store PNGs and FLMs, let's call it `/path/to/store`.
+
+Great, now:
+
+```
+cd /path/to/blend
+blender aberto.blend -b -P /path/to/amblux/src/amblux.py -- /path/to/store /path/to/laby/assets/map -T 60 -w 60 -t 6 -j
+```
+
+Adjust the paths and parameters for your case. See the help for more info:
+
+```
+blender -b -P /path/to/amblux/src/amblux.py -- --help
+```
+
+And also check [Ambulatilis Lux](https://github.com/andresmrm/ambulatilis-lux).
+There is a less complex .blend there.
+
 
 ## Credits
 
