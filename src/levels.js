@@ -37,6 +37,7 @@ function fadeGame(fadeTime=2000) {
 
 function wonLevel1() {
     state.game.createdSounds.harp.play()
+    fadeOutPositionalSounds()
     playSong('song')
     fadeGame()
     openPage('end1', false)
