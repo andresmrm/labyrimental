@@ -37,7 +37,7 @@ export function changeDarkPresencePos(playerPos, fTouched) {
             if (posDist(pos, state.position) < 0.5 && fTouched) fTouched()
         }
     }
-    var time = posDist(oldPos, playerPos) * 2500
+    var time = posDist(oldPos, playerPos) * 3500
     tweenPos(oldPos, playerPos, posSetter, time, state.darkPresence)
 }
 
