@@ -3,7 +3,7 @@ import {state} from './store.js'
 
 
 export function initKeyboardInput(fMove, fInteract) {
-    var cursors = ['UP', 'DOWN', 'LEFT', 'RIGHT']
+    var cursors = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'A']
     cursors.map(
         (key) => state.game.input.keyboard.addKey(
             Phaser.Keyboard[key]).onDown.add(fMove, this, null, key))

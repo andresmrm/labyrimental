@@ -104,7 +104,6 @@ function loadLevel(n) {
     state.position = [4, 4, 0]
     state.followed = []
     state.power = []
-    // loadVision(state)
     if (n == 1) {
         randomizePresencePositions(state.position)
         state.won = wonLevel1

@@ -50,6 +50,8 @@ export var state = {
     playIntro: true,
     // current playing or last played song
     currentSong: null,
+    // if should animate player moves
+    animateMove: false,
 }
 
 

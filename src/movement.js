@@ -61,9 +61,12 @@ export function move(event, key) {
             rotatePlayer(state, 'right')
             rotated = true
             break
+        case 'A':
+            console.log('Switching Animate Move Mode')
+            state.animateMove = !state.animateMove
         }
         // checkTeleportation(state)
-        if (rotated || moved) loadVision(state)
+        if (rotated || moved) loadVision(state, key)
         if (moved && state.onMoved) state.onMoved()
     }
 }
