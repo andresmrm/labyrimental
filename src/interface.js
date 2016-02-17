@@ -1,27 +1,39 @@
-var pages = {
-    mainmenu: require("text!./pages/mainmenu.html"),
-    controls: require("text!./pages/controls.html"),
-    instructions: require("text!./pages/instructions.html"),
-    instrorstart: require("text!./pages/instrorstart.html"),
-    history: require("text!./pages/history.html"),
-    cantsee: require("text!./pages/cantsee.html"),
-    end1: require("text!./pages/end1.html"),
-    l2intro: require("text!./pages/l2intro.html"),
-    l2intro2: require("text!./pages/l2intro2.html"),
-    l2intro3: require("text!./pages/l2intro3.html"),
-    l2intro3a: require("text!./pages/l2intro3a.html"),
-    l2intro4: require("text!./pages/l2intro4.html"),
-    l2intro5: require("text!./pages/l2intro5.html"),
-    lost2: require("text!./pages/lost2.html"),
-    l2end1: require("text!./pages/l2end1.html"),
-    l2end2: require("text!./pages/l2end2.html"),
-    l2end3: require("text!./pages/l2end3.html"),
-    credits: require("text!./pages/credits.html"),
-}
+var req = require.context('./pages')
+var pages = {}
+req.keys().forEach(k => {
+    var k2 = k.split('/')
+    k2 = k2[k2.length-1].split('.')
+    k2 = k2[k2.length-2]
+    pages[k2] = req(k)
+})
+console.log(pages)
+window.pages = pages
+// var pages = {
+//     mainmenu: require("text!./pages/mainmenu.html"),
+//     controls: require("text!./pages/controls.html"),
+//     instructions: require("text!./pages/instructions.html"),
+//     instrorstart: require("text!./pages/instrorstart.html"),
+//     history: require("text!./pages/history.html"),
+//     cantsee: require("text!./pages/cantsee.html"),
+//     end1: require("text!./pages/end1.html"),
+//     l2intro: require("text!./pages/l2intro.html"),
+//     l2intro2: require("text!./pages/l2intro2.html"),
+//     l2intro3: require("text!./pages/l2intro3.html"),
+//     l2intro3a: require("text!./pages/l2intro3a.html"),
+//     l2intro4: require("text!./pages/l2intro4.html"),
+//     l2intro5: require("text!./pages/l2intro5.html"),
+//     lost2: require("text!./pages/lost2.html"),
+//     l2end1: require("text!./pages/l2end1.html"),
+//     l2end2: require("text!./pages/l2end2.html"),
+//     l2end3: require("text!./pages/l2end3.html"),
+//     credits: require("text!./pages/credits.html"),
+//     tut1a: require("text!./pages/tut1a.html"),
+//     tut1b: require("text!./pages/tut1b.html"),
+// }
 
 function getDiv(outer=false) {
     if (outer) return document.getElementById('interface-outer')
-    else return document.getElementById('interface')
+    else return document.getElementById('interface-menus')
 }
 
 export function setInterfaceBounds(bounds) {
@@ -64,5 +76,3 @@ export function hideLoadingScreen() {
     var el = document.getElementById('loading-screen')
     if (el) el.parentNode.removeChild(el)
 }
-
-window.openPage = openPage

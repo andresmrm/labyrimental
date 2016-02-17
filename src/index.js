@@ -3,8 +3,7 @@ import {playSong} from './game.js'
 import {state} from './store.js'
 
 function preload() {
-    // TODO: Tirar isso?
-    state.game.stage.disableVisibilityChange = true
+    //state.game.stage.disableVisibilityChange = true
 
     state.game.load.audio('song', ['assets/audio/song.ogg'])
 }

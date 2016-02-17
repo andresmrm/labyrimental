@@ -7,6 +7,7 @@ import {shrines, state} from './store.js'
 import {interact, playButtonSound, onSetVision} from './game.js'
 import {resize} from './vision.js'
 import {pickLevel, startLevel} from './levels.js'
+import {closeTutMsg, checkTutorial, TUTORIAL_PHASES} from './tutorial.js'
 
 
 export function mainLoad() {
@@ -72,6 +73,11 @@ function mainInit() {
     if (!localStorage.getItem('lastLevel')) {
         // No level unlocked
         pickLevel(1, false)
+
+        // TODO: only for debug, comment!
+        startLevel()
+        checkTutorial(TUTORIAL_PHASES.startingGame)
+
     } else {
         // Level 2 unlocked
         openPage('mainmenu', false)
@@ -79,6 +85,8 @@ function mainInit() {
 }
 
 // Exported functions, so interface can call them
-window.playButtonSound = playButtonSound
+window.openPage = openPage
 window.pickLevel = pickLevel
 window.startLevel = startLevel
+window.closeTutMsg = closeTutMsg
+window.playButtonSound = playButtonSound

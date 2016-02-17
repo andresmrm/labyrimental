@@ -3,6 +3,7 @@ import {changePresencePos} from './movement.js'
 import {addEffect} from './vision.js'
 import {shrines, state} from './store.js'
 import {changePresenceSoundGain} from './createAudios.js'
+import {checkTutorial, TUTORIAL_PHASES} from './tutorial.js'
 
 
 export function playSong(name, fadeInTime=2000) {
@@ -70,6 +71,10 @@ export function interact() {
                     state.tint += shrines[presence].color
                     if (state.filters.length) state.filters = []
                 }
+
+                // Open tutorial dialog if needed
+                checkTutorial(TUTORIAL_PHASES.callingPresence)
+
                 return true
             }
         }
@@ -99,9 +104,16 @@ function checkInShrine() {
                 var newPower = true
                 if (state.power.length && state.power[0] == shrine) newPower = false
                 if (newPower) setPower(shrine, true)
+
+                // Open tutorial dialog if needed
+                checkTutorial(TUTORIAL_PHASES.searchingShrine)
+
             // If followed by presence of the current shrine
             } else if (state.followed.includes(shrine)) {
                 presenceArrived(state, shrine)
+
+                // Open tutorial dialog if needed
+                checkTutorial(TUTORIAL_PHASES.returningPresence)
             }
         } else {
             if (!state.power.includes(shrine)) setPower(shrine)
@@ -162,6 +174,12 @@ function isInPresence(position) {
             return k
     }
     return null
+}
+
+export function openTutWhenInPresence() {
+    var presence = isInPresence(state.position)
+    if (presence && state.power.includes(presence))
+        checkTutorial(TUTORIAL_PHASES.searchingPresence)
 }
 
 export function playButtonSound() {

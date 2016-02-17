@@ -52,6 +52,7 @@ export var state = {
     currentSong: null,
     // if should animate player moves
     animateMove: false,
+    tutorial: 1,
 }
 
 

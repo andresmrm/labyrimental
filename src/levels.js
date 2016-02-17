@@ -4,7 +4,8 @@ import {addEffect, loadVision} from './vision.js'
 import {randomizePresencePositions} from './randPos.js'
 import {changeDarkPresencePos, initPlayerPos} from './movement.js'
 import {createPositionedAudios} from './createAudios.js'
-import {touchedDarkPresence, stopSong, playSong, playButtonSound} from './game.js'
+import {touchedDarkPresence, stopSong, playSong, playButtonSound,
+        openTutWhenInPresence} from './game.js'
 import {state} from './store.js'
 
 import {setListenerPos} from './audio.js'
@@ -110,7 +111,7 @@ function loadLevel(n) {
         state.intro = introLevel1
         state.tint = 0xffffff
         state.filters = []
-        state.onMoved = null
+        state.onMoved = openTutWhenInPresence
     } else if (n == 2) {
         state.won = wonLevel2
         state.lost = lostLevel2
@@ -119,6 +120,9 @@ function loadLevel(n) {
         state.filters = [state.game.createdFilters.gray]
         state.onMoved = () => changeDarkPresencePos(state.position,
                                                     touchedDarkPresence)
+
+        // Disable tutorial
+        state.tutorial = 0
     }
 }
 
