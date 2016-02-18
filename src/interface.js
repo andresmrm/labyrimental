@@ -6,8 +6,8 @@ req.keys().forEach(k => {
     k2 = k2[k2.length-2]
     pages[k2] = req(k)
 })
-console.log(pages)
-window.pages = pages
+// console.log(pages)
+// window.pages = pages
 // var pages = {
 //     mainmenu: require("text!./pages/mainmenu.html"),
 //     controls: require("text!./pages/controls.html"),
@@ -49,7 +49,7 @@ export function openPage(name, playSound=true, replace=null) {
     showInterface()
     var text = pages[name]
     if (replace)
-        text = text.replace('{{}}', replace)
+        text = text.replace(/\{\{\}\}/g, replace)
     getDiv().innerHTML = `<div class="page">${text}</div>`
     if (playSound) window.playButtonSound()
     window.scrollTo(0, 0)

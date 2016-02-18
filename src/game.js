@@ -73,7 +73,7 @@ export function interact() {
                 }
 
                 // Open tutorial dialog if needed
-                checkTutorial(TUTORIAL_PHASES.callingPresence)
+                checkTutorial(TUTORIAL_PHASES.callingPresence, presence)
 
                 return true
             }
@@ -103,17 +103,24 @@ function checkInShrine() {
                 !state.presences[shrine].arrived) {
                 var newPower = true
                 if (state.power.length && state.power[0] == shrine) newPower = false
-                if (newPower) setPower(shrine, true)
+                if (newPower) {
+                    if (state.power.length) {
+                        // Changing current power
+                        checkTutorial(TUTORIAL_PHASES.changedPower, shrine)
+                    } else {
+                        // First power
+                        checkTutorial(TUTORIAL_PHASES.searchingShrine, shrine)
+                    }
+                    setPower(shrine, true)
+                }
 
-                // Open tutorial dialog if needed
-                checkTutorial(TUTORIAL_PHASES.searchingShrine)
 
             // If followed by presence of the current shrine
             } else if (state.followed.includes(shrine)) {
                 presenceArrived(state, shrine)
 
                 // Open tutorial dialog if needed
-                checkTutorial(TUTORIAL_PHASES.returningPresence)
+                checkTutorial(TUTORIAL_PHASES.returningPresence, shrine)
             }
         } else {
             if (!state.power.includes(shrine)) setPower(shrine)
@@ -179,7 +186,7 @@ function isInPresence(position) {
 export function openTutWhenInPresence() {
     var presence = isInPresence(state.position)
     if (presence && state.power.includes(presence))
-        checkTutorial(TUTORIAL_PHASES.searchingPresence)
+        checkTutorial(TUTORIAL_PHASES.searchingPresence, presence)
 }
 
 export function playButtonSound() {
