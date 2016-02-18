@@ -7,7 +7,7 @@ import {shrines, state} from './store.js'
 import {interact, playButtonSound, onSetVision} from './game.js'
 import {resize} from './vision.js'
 import {pickLevel, startLevel} from './levels.js'
-import {closeTutMsg, checkTutorial, TUTORIAL_PHASES} from './tutorial.js'
+import {closeTutMsg} from './tutorial.js'
 
 
 export function mainLoad() {
@@ -75,8 +75,7 @@ function mainInit() {
         pickLevel(1, false)
 
         // TODO: only for debug, comment!
-        startLevel()
-        checkTutorial(TUTORIAL_PHASES.startingGame)
+        // startLevel()
 
     } else {
         // Level 2 unlocked

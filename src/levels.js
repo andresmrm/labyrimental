@@ -7,9 +7,9 @@ import {createPositionedAudios} from './createAudios.js'
 import {touchedDarkPresence, stopSong, playSong, playButtonSound,
         openTutWhenInPresence} from './game.js'
 import {state} from './store.js'
-
 import {setListenerPos} from './audio.js'
 import {tweenPos} from './movement.js'
+import {checkTutorial, TUTORIAL_PHASES} from './tutorial.js'
 
 
 var darkPresencePhrases = [
@@ -126,12 +126,13 @@ function loadLevel(n) {
     }
 }
 
-export function startLevel() {
+export function startLevel(checkTut=true) {
     hideInterface()
     initPlayerPos()
     createPositionedAudios()
     state.state = 'starting'
     loadVision(state)
+    if (checkTut) checkTutorial(TUTORIAL_PHASES.startingGame)
 }
 
 export function pickLevel(n, playSound=true) {
