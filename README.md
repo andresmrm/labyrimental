@@ -63,6 +63,11 @@ blender -b -P /path/to/amblux/src/amblux.py -- --help
 And also check [Ambulatilis Lux](https://github.com/andresmrm/ambulatilis-lux).
 There is a less complex .blend there.
 
+## Audios
+
+The Audacity projects used to created the audios can be found [here](https://mega.nz/#!xtkEGCTL!AOQlbfsMH8beXq56l7XdTs8gVezfbUBPzHAEJ8iAqww).
+Some audios used were not made by me, check the credits section bellow.
+
 
 ## Credits
 
