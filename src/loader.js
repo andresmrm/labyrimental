@@ -36,7 +36,7 @@ export function mainLoad() {
 
     state.game.load.script(
         'gray',
-        'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
+        'https://raw.githubusercontent.com/photonstorm/phaser/master/v2/filters/Gray.js')
 
     var firstImg = posDirToText(state.position, state.direction)
     state.game.load.image(firstImg, `assets/map/${firstImg}.jpg`)
