@@ -30,7 +30,13 @@ function create() {
     var song = state.game.add.audio('song', 1, true)
     state.game.sound.setDecodedCallback([song], () => playSong('song'), this)
     state.game.createdSounds = {song}
-    mainLoad()
+
+    state.game.load.crossOrigin = 'anonymous'
+
+    // TODO: mainLoad needs to be called via setTimeout, no idea why...
+    // If called directly loader stops in the middle.
+    // mainLoad()
+    setTimeout(mainLoad, 10)
 }
 
 function update() {

@@ -9,12 +9,20 @@ import {resize} from './vision.js'
 import {pickLevel, startLevel} from './levels.js'
 import {closeTutMsg} from './tutorial.js'
 
-
 export function mainLoad() {
-    state.game.load.onLoadComplete.add(function () {
-            state.game.load.onLoadComplete.removeAll()
-            mainInit()
+    state.game.load.onLoadStart.add(function () {
+        console.log('Loading...')
     }, this)
+
+    state.game.load.onLoadComplete.add(function () {
+        console.log('Done loading')
+        state.game.load.onLoadStart.removeAll()
+        state.game.load.onLoadComplete.removeAll()
+        mainInit()
+    }, this)
+
+    var firstImg = posDirToText(state.position, state.direction)
+    state.game.load.image(firstImg, `assets/map/${firstImg}.jpg`)
 
     state.game.load.audio('button', ['assets/audio/button.ogg'])
     state.game.load.audio('stream', ['assets/audio/stream_cold.ogg'])
@@ -34,20 +42,13 @@ export function mainLoad() {
     state.game.load.audio('rarr', ['assets/audio/rarr.ogg'])
     state.game.load.audio('end2', ['assets/audio/end2.ogg'])
 
-    state.game.load.script(
-        'gray',
-        'vendor/Gray.js')
-
-    var firstImg = posDirToText(state.position, state.direction)
-    state.game.load.image(firstImg, `assets/map/${firstImg}.jpg`)
+    state.game.load.script('gray', 'vendor/Gray.js')
 
     state.game.load.start()
-    console.log('Loading...')
 }
 
 // First init called. Should be called only once, and before any level.
 function mainInit() {
-    console.log('Done loading')
     hideLoadingScreen()
 
     state.game.stage.backgroundColor = '#000000'
@@ -65,7 +66,7 @@ function mainInit() {
         state.presences[k] = {}
     }
 
-    state.game.createdFilters = {gray: state.game.add.filter('Gray')}
+    // state.game.createdFilters = {gray: state.game.add.filter('Gray')}
     createCommonAudios()
     initKeyboardInput(move, interact)
     initMouseInput(move, interact)
