@@ -70,7 +70,7 @@ function(e,t){e.exports="<p>Before you can help one of the presences, you need t
 function(e,t){e.exports="<p>We did it! United the elemental presences could communicate with the dark presence and lessen her anger.</p>\n<a onClick=\"window.openPage('l2end2')\">Great!</a>\n"},/*!*******************************!*\
   !*** ./src/pages/l2end2.html ***!
   \*******************************/
-function(e,t){e.exports="<p>It seems she's angry because of the powerfull spells casted and she thought you're the one responsible for them.</p>\n<p>Maybe it's time to find out who is behind all this...</p>\n<a onClick=\"window.openPage('l2end3')\">...</a>\n"},/*!*******************************!*\
+function(e,t){e.exports="<p>It seems she's angry because of the powerfull spells casted recently and she thought you're the one responsible for them.</p>\n<p>Maybe it's time to find out who is behind all this...</p>\n<a onClick=\"window.openPage('l2end3')\">...</a>\n"},/*!*******************************!*\
   !*** ./src/pages/l2end3.html ***!
   \*******************************/
 function(e,t){e.exports="<p>Continue?</p>\n<a onClick=\"window.openPage('credits')\">End</a>\n"},/*!********************************!*\
