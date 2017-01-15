@@ -42,7 +42,7 @@ export function mainLoad() {
     state.game.load.audio('rarr', ['assets/audio/rarr.ogg'])
     state.game.load.audio('end2', ['assets/audio/end2.ogg'])
 
-    state.game.load.script('gray', 'vendor/Gray.js')
+    // state.game.load.script('gray', 'vendor/Gray.js')
 
     state.game.load.start()
 }
