@@ -66,7 +66,7 @@ function mainInit() {
         state.presences[k] = {}
     }
 
-    state.game.createdFilters = {gray: state.game.add.filter('Gray')}
+    // state.game.createdFilters = {gray: state.game.add.filter('Gray')}
     createCommonAudios()
     initKeyboardInput(move, interact)
     initMouseInput(move, interact)
