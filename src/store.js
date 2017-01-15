@@ -54,7 +54,3 @@ export var state = {
     animateMove: false,
     tutorial: 1,
 }
-
-
-// Debug TODO: remover?
-window.s = state

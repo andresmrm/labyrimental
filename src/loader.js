@@ -74,10 +74,6 @@ function mainInit() {
     if (!localStorage.getItem('lastLevel')) {
         // No level unlocked
         pickLevel(1, false)
-
-        // TODO: only for debug, comment!
-        // startLevel()
-
     } else {
         // Level 2 unlocked
         openPage('mainmenu', false)

@@ -193,43 +193,6 @@ export function playButtonSound() {
     state.game.createdSounds.button.play()
 }
 
-// function createGameElements() {
-//     console.log('Creating...')
-
-//     // state.game.createdSounds.song.stop()
-//     // hideInterface()
-//     // startLevel()
-//     // setTimeout(function () {
-//     //     for (let p in state.presences) {
-//     //         state.followed = p
-//     //         presenceArrived(state)
-//     //     }
-//     // }, 2000)
-
-
-
-//     // setTimeout(function () {
-//     //     // TODO: tratar melhor qual música para/toca
-//     //     state.game.createdSounds.song.stop()
-//     //     // loadLevel2()
-//     //     // toLevel2intro()
-//     // }, 2000)
-
-//     // loadLevel2()
-//     // randomizePresencePositions(state.position)
-//     // startLevel()
-
-//     // openPage('controls', false)
-//     // openPage('instrorstart', false)
-
-//     // Debug
-//     // state.effect2 = state.game.add.graphics(0, 0)
-//     // state.effect2.beginFill(0xff0000, 1)
-//     // state.effect2.drawRect(0, 0, 10, 10)
-//     // state.effect2.endFill()
-// }
-
-
 function cheatLevel1() {
     for (let p in state.presences) {
         state.followed.push(p)
