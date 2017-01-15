@@ -73,7 +73,7 @@ function(e,t){e.exports="<p>We did it! United the elemental presences could comm
 function(e,t){e.exports="<p>It seems she's angry because of the powerfull spells casted recently and she thought you're the one responsible for them.</p>\n<p>Maybe it's time to find out who is behind all this...</p>\n<a onClick=\"window.openPage('l2end3')\">...</a>\n"},/*!*******************************!*\
   !*** ./src/pages/l2end3.html ***!
   \*******************************/
-function(e,t){e.exports="<p>Continue?</p>\n<a onClick=\"window.openPage('credits')\">End</a>\n"},/*!********************************!*\
+function(e,t){e.exports="<p>To be continued?</p>\n<a onClick=\"window.openPage('credits')\">...</a>\n"},/*!********************************!*\
   !*** ./src/pages/l2intro.html ***!
   \********************************/
 function(e,t){e.exports="<p>Uh oh...</p>\n<a onClick=\"window.openPage('l2intro2')\">WHAT WAS THAT?</a>\n<a onClick=\"window.openPage('l2intro2')\">Not again...</a>\n"},/*!*********************************!*\
